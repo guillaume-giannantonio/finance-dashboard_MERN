@@ -33,9 +33,9 @@ mongoose.connect(process.env.MONGODB_URL, {
 })
 	.then(async () => {
 		app.listen(PORT, () => console.log(`SERVER IS RUNNING ON ${PORT}`))
-		/*await mongoose.connection.dropDatabase();
+		await mongoose.connection.dropDatabase();
 		Product.insertMany(products);
 		KPI.insertMany(kpis)
-		Transaction.insertMany(transactions)*/
+		Transaction.insertMany(transactions)
 	})
 	.catch(err => console.log(err))
