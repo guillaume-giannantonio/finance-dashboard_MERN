@@ -86,7 +86,7 @@ const KPISchema = new Schema(
 			currency: "USD",
 			get: (v) => v / 100,
 		},
-		expensesByCategory: [categorySchema],
+		expensesByCategory: categorySchema,
 		monthlyData: [monthSchema],
 		dailyData: [daySchema],
 	},

@@ -7,8 +7,10 @@ const morgan = require('morgan')
 const kpiRoutes = require('./routes/kpi.js')
 const KPI = require('./models/KPI')
 const Product = require('./models/Product')
-const {kpis, products} = require('./data/data')
+const Transaction = require('./models/Transaction')
+const {kpis, products, transactions} = require('./data/data')
 const productRoutes = require('./routes/product.js')
+const transactionRoutes = require('./routes/transaction')
 require('dotenv').config()
 
 const app = express()
@@ -22,6 +24,7 @@ app.use(cors())
 
 app.use('/kpi', kpiRoutes)
 app.use('/product', productRoutes)
+app.use('/transaction', transactionRoutes)
 
 const PORT = process.env.PORT || 9000;
 mongoose.connect(process.env.MONGODB_URL, {
@@ -32,6 +35,7 @@ mongoose.connect(process.env.MONGODB_URL, {
 		app.listen(PORT, () => console.log(`SERVER IS RUNNING ON ${PORT}`))
 		/*await mongoose.connection.dropDatabase();
 		Product.insertMany(products);
-		KPI.insertMany(kpis)*/
+		KPI.insertMany(kpis)
+		Transaction.insertMany(transactions)*/
 	})
 	.catch(err => console.log(err))
