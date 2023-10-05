@@ -34,7 +34,7 @@ This project is not intended to serve as a production-ready financial dashboard 
 <p>Simply clone this project using the git clone commande :
 
 ```bash
-git clone TODO
+git clone git@github.com:guillaume-giannantonio/finance-dashboard_MERN.git
 ```
 
 Fill in both environnement (.env) files, in client and server folder : 
